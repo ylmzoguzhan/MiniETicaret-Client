@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AnasayfaComponent } from './anasayfa.component';
 import { ComponentsModule } from './components/components.module';
-import { AnasayfaModule } from './anasayfa/anasayfa.module';
-
+import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [
-   
+    AnasayfaComponent
   ],
   imports: [
     CommonModule,
     ComponentsModule,
-    AnasayfaModule
+    RouterModule
+  ],
+  exports:[
+    AnasayfaComponent
   ]
 })
-export class UiModule { }
+export class AnasayfaModule { }

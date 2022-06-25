@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 import { LayoutComponent } from './admin/layout/layout.component';
-import { HomeComponent } from './ui/components/home/home.component';
-import { ProductsComponent } from './ui/components/products/products.component';
+import { AnasayfaComponent } from './ui/anasayfa/anasayfa.component';
+
 
 const routes: Routes = [
   {
@@ -14,9 +14,11 @@ const routes: Routes = [
       {path:"orders",loadChildren:()=> import("./admin/components/orders/orders.module").then(module=>module.OrdersModule)},
     ]
   },
-  {path:"",component:HomeComponent},
-  {path:"baskets", loadChildren: ()=> import("./ui/components/baskets/baskets.module").then(module=>module.BasketsModule)},
-  {path:"products", loadChildren: ()=> import("./ui/components/products/products.module").then(module=>module.ProductsModule)},
+  {path:"",component:AnasayfaComponent, children:[
+    {path:"baskets", loadChildren: ()=> import("./ui/components/baskets/baskets.module").then(module=>module.BasketsModule)},
+    {path:"products", loadChildren: ()=> import("./ui/components/products/products.module").then(module=>module.ProductsModule)},
+  ]},
+  
 ];
 
 @NgModule({
