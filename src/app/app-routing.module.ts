@@ -15,6 +15,7 @@ const routes: Routes = [
     ]
   },
   {path:"",component:AnasayfaComponent, children:[
+    {path:"home", loadChildren: ()=> import("./ui/components/home/home.module").then(module=>module.HomeModule)},
     {path:"baskets", loadChildren: ()=> import("./ui/components/baskets/baskets.module").then(module=>module.BasketsModule)},
     {path:"products", loadChildren: ()=> import("./ui/components/products/products.module").then(module=>module.ProductsModule)},
   ]},
